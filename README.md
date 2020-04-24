@@ -1,6 +1,5 @@
 ## проект'News Explorer'
 # Express.js-сервер
-
 Версия проекта: v1.0.0
 
 Проект доступен по ссылке: http://api.meste4ko.tk/
