@@ -3,15 +3,21 @@ const express = require('express');
 
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes/index');
 const middlewares = require('./middlewares/index');
 const databaseUrl = require('./utils/databaseAddres');
 
 const { PORT = 3000 } = process.env;
 const { MONGO_URL = databaseUrl } = process.env;
+const corsOptions = {
+	origin: 'http://localhost:8080/',
+	credentials: true,
+};
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors(corsOptions));
 
 mongoose.connect(MONGO_URL, {
 	useNewUrlParser: true,
