@@ -11,7 +11,7 @@ const databaseUrl = require('./utils/databaseAddres');
 const { PORT = 3000 } = process.env;
 const { MONGO_URL = databaseUrl } = process.env;
 const corsOptions = {
-	origin: 'http://localhost:8080/',
+	origin: 'http://84.201.181.215:3000/',
 	credentials: true,
 };
 
