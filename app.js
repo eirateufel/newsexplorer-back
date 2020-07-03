@@ -13,12 +13,15 @@ const { MONGO_URL = databaseUrl } = process.env;
 const corsOptions = {
 	origin: 'http://localhost:8080/',
 	credentials: true,
-	'Access-Control-Allow-Origin': '*',
 };
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors(corsOptions));
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 mongoose.connect(MONGO_URL, {
 	useNewUrlParser: true,
