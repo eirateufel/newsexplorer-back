@@ -13,6 +13,7 @@ const { MONGO_URL = databaseUrl } = process.env;
 const corsOptions = {
 	origin: 'http://localhost:8080/',
 	credentials: true,
+	'Access-Control-Allow-Origin': '*',
 };
 
 app.use(express.urlencoded({ extended: true }));
